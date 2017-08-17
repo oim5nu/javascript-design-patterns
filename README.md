@@ -5,7 +5,7 @@ I. Creational Patterns
 1. Constructor Pattern
 
 2. Module Pattern
-1) Standard Format
+- Standard Format
 ```
   var coffeeMachine = (function() {
 
@@ -32,7 +32,7 @@ I. Creational Patterns
 
   coffeeMachine.produceCoffee(1, 1);
 ```
-2) Revealing Format
+- Revealing Format
 ```
   var coffeeMachine = (function() {
     // private variables ...
@@ -63,7 +63,7 @@ I. Creational Patterns
   coffeeMachine.produceCoffee(1, 1);
   coffeeMachine.produceFoam(1);
 ```
-3) Augmenting format
+- Augmenting format
 ```
   var smartCoffeeMachine = (function(coffeeMachine) {
     coffeeMachine.produceCoffeeWithFoam = function(water, capsule, milk) {
