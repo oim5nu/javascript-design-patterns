@@ -6,7 +6,7 @@ I. Creational Patterns
 
 2. Module Pattern
 1) Standard Format
-
+```
   var coffeeMachine = (function() {
 
     // locally scoped object
@@ -31,9 +31,9 @@ I. Creational Patterns
   }());  // Immediately-Invoked-Function-Expressions
 
   coffeeMachine.produceCoffee(1, 1);
-
+```
 2) Revealing Format
-
+```
   var coffeeMachine = (function() {
     // private variables ...
 
@@ -62,9 +62,9 @@ I. Creational Patterns
 
   coffeeMachine.produceCoffee(1, 1);
   coffeeMachine.produceFoam(1);
-
+```
 3) Augmenting format
-
+```
   var smartCoffeeMachine = (function(coffeeMachine) {
     coffeeMachine.produceCoffeeWithFoam = function(water, capsule, milk) {
       if (water && capsule && milk) {
@@ -79,3 +79,4 @@ I. Creational Patterns
   }(coffeeMachine || {}));
 
   smartCoffeeMachine.produceCoffeeWithFoam(1,1,1); // console.log(coffeeMachine) may see produceCoffeeWithFoam added
+```
