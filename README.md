@@ -53,12 +53,11 @@ I. Creational Patterns
         console.log('The coffeeMachine needs milk for frothering.')
       }
     }
-
+    
     return {
       produceCoffee: _produceCoffee,
       produceFoam: _produceFoam
     };
-
   }());  // Immediately-Invoked-Function-Expressions
 
   coffeeMachine.produceCoffee(1, 1);
@@ -74,7 +73,9 @@ I. Creational Patterns
         console.log('The smart coffee machine needs water, capsule and milk.')
       }
     }
+    
     return coffeeMachine;
+    
   }(coffeeMachine || {}));
 
   smartCoffeeMachine.produceCoffeeWithFoam(1,1,1); // console.log(coffeeMachine) may see produceCoffeeWithFoam added
