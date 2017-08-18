@@ -1,10 +1,10 @@
 # javascript-design-patterns
 Examples of javascript design patterns
 
-##I. Creational Patterns
-###1. Constructor Pattern
+## I. Creational Patterns
+### 1. Constructor Pattern
 
-###2. Module Pattern -- to emulate the encapsulation characteristics of class in object oriented programming.
+### 2. Module Pattern -- to emulate the encapsulation characteristics of class in object oriented programming.
 
 - Standard Format
 ```
@@ -82,7 +82,7 @@ Examples of javascript design patterns
   smartCoffeeMachine.produceCoffeeWithFoam(1,1,1); // console.log(coffeeMachine) may see produceCoffeeWithFoam added
 ```
 
-###3. Singleton -- to have one unquiue instance/structure (not object) of class returned, served as a shared resource namespace.
+### 3. Singleton -- to have one unquiue instance/structure (not object) of class returned, served as a shared resource namespace.
 - General singleton
 ```
 var singleton = {
