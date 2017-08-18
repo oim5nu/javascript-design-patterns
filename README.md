@@ -90,7 +90,7 @@ var singleton = {
 }
 ```
 
-- Lazy initialation - only create the unique instance when needed so as to increase speed/performance and reduce memory used when starting up
+- Lazy instantiation - only create the unique instance when needed so as to increase speed/performance and reduce memory used when starting up
 ```
 var singletonKettle = (function() {
   var uniqueInstance;
