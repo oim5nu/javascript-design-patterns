@@ -81,3 +81,47 @@ I. Creational Patterns
 
   smartCoffeeMachine.produceCoffeeWithFoam(1,1,1); // console.log(coffeeMachine) may see produceCoffeeWithFoam added
 ```
+
+3. Singleton -- to have one unquiue instance/structure (not object) of class returned, served as a shared resource namespace.
+- General singleton
+```
+var singleton = {
+  someMethod: function() { }
+}
+```
+
+- Lazy initialation - only create the unique instance when needed so as to increase speed/performance and reduce memory used when starting up
+```
+var singletonKettle = (function() {
+  var uniqueInstance;
+  
+  // All the normal singleton code here
+  var init = function() {
+    var _amountOfWater = 0,
+        _max = 2,
+        _min = 0;
+    
+    return {
+      getWaterInKettle: function() {
+        _amountOfWater = Math.random() * (_max - _min) + _min;
+        return _amountOfWater;
+      }
+    };
+  };
+  
+  return {
+    getInstance: function() {
+      if (!uniqueInstance) { // Only initialate if not existing
+        uniqueInstance = init();
+      }
+      return uniqueInstance;
+    }  
+  };
+}());
+
+var kettleUsedInMorning = singletonKettle.getInstance();
+var KettleUsedAtNoon = singletonKettle.getInstance();
+
+console.log( KettleUsedAtNoon === kettleUsedInMorning ); // true
+console.log( kettleUsedInMorning.getWaterInKettle === KettleUsedAtNoon.getWaterInKettle); // true
+```
