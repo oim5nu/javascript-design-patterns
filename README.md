@@ -4,9 +4,7 @@ Examples of javascript design patterns
 I. Creational Patterns
 1. Constructor Pattern
 
-2. Module Pattern
-
-To simulate the encapsulation characteristics of class in object oriented programming.
+2. Module Pattern -- to simulate the encapsulation characteristics of class in object oriented programming.
 
 - Standard Format
 ```
