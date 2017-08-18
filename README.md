@@ -1,4 +1,4 @@
-# javascript-design-patterns
+# Javascript-design-patterns
 Examples of javascript design patterns
 
 ## I. Creational Patterns
