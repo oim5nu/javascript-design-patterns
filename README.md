@@ -125,3 +125,63 @@ var KettleUsedAtNoon = singletonKettle.getInstance();
 console.log( KettleUsedAtNoon === kettleUsedInMorning ); // true
 console.log( kettleUsedInMorning.getWaterInKettle === KettleUsedAtNoon.getWaterInKettle); // true
 ```
+
+### 4. Factory
+- Simple Factory
+```
+var commercialMachineModel = function(options) {
+  this.machineType = options.machineType || "commercial";
+  this.waterCapacity = options.waterCapacity || 4;
+  this.temperatureAdjustment = options.temperatureAdjustment || "manual";
+  this.groups = options.groups || 1;
+  this.power = options.power || 2000;
+  this.pump = options.pump || 275;
+}
+
+var capsuleMachineModel = function(options) {
+  this.machineType = options.machineType || "capsule";
+  this.waterCapacity = options.waterCapacity || 1;
+  this.frother = options.frother || "optional";
+  this.brewPump = options.brewPump || 19;
+  this.programmable = options.programmable || false;
+  this.power = options.power || 1260;
+  this.color = options.color || "white";
+}
+
+var automaticMachineModel = function(options) {
+  this.machineType = options.machineType || "automatic";
+  this.waterCapacity = options.waterCapacity || 2;
+  this.frother = options.frother || "built-in";
+  this.grinder = options.grinder || "built-in";
+  this.preBrewable = options.preBrewable || true;
+  this.programmable = options.programmable;
+}
+
+var coffeeMachineFactory = {};
+// function coffeeMachineFactory() {}
+coffeeMachineFactory.prototype = {};
+
+// Define the prototypes and utilities
+coffeeMachineFactory.prototype.machineModel = capsuleMachineModel; 
+
+coffeeMachineFactory.prototype.createMachine = function(options) {
+  switch(options.machineType) {
+    case "automatic":
+      this.machineModel = automaticMachineModel;
+      break;
+    case "commercial":
+      this.machineModel = commercialMachineModel;
+      break;
+    default:
+      this.machineModel = capsuleMachineModel;  
+  }
+}
+
+// Create an instance of the factory that makes machine
+var machineFactory = new coffeeMachineFactory();
+var coffeeMachine = machineFactory.createMachine({
+  machineType: "automatic"
+});
+
+console.log(coffeeMachine instanceof automaticMachineModel);
+```
