@@ -183,5 +183,6 @@ var coffeeMachine = machineFactory.createMachine({
   machineType: "automatic"
 });
 
-console.log(coffeeMachine instanceof automaticMachineModel);
+console.log(coffeeMachine instanceof automaticMachineModel); // true  
+console.log(coffeeMachine); 
 ```
