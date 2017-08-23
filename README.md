@@ -1,4 +1,4 @@
-# Javascript-design-patterns
+# Javascript-Design-Patterns
 Examples of javascript design patterns
 
 ## I. Creational Patterns
@@ -126,8 +126,13 @@ console.log( KettleUsedAtNoon === kettleUsedInMorning ); // true
 console.log( kettleUsedInMorning.getWaterInKettle === KettleUsedAtNoon.getWaterInKettle); // true
 ```
 
-### 4. Factory
-- Simple Factory
+### 4. Factory 
+#### Purpose 
+* Separate object creation from the decision of which object to create
+* Add new classes and functionality without breaking open closed principle
+* Store which object to create outside of the program
+
+- Factory Method
 ```
 var commercialMachineModel = function(options) {
   this.machineType = options.machineType || "commercial";
