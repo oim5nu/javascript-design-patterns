@@ -4,8 +4,11 @@ Examples of javascript design patterns
 ## I. Creational Patterns
 ### 1. Constructor Pattern
 
-### 2. Module Pattern -- to emulate the encapsulation characteristics of class in object oriented programming.
+### 2. Module Pattern 
+#### Purpose
+* Emulate the encapsulation characteristics of class in object oriented programming.
 
+#### Approaches
 - Standard Format
 ```
   var coffeeMachine = (function() {
@@ -82,7 +85,11 @@ Examples of javascript design patterns
   smartCoffeeMachine.produceCoffeeWithFoam(1,1,1); // console.log(coffeeMachine) may see produceCoffeeWithFoam added
 ```
 
-### 3. Singleton -- to have one unquiue instance/structure (not object) of class returned, served as a shared resource namespace.
+### 3. Singleton 
+#### Purpose
+* Have one unquiue instance/structure (not object) of class returned, served as a shared resource namespace.
+
+#### Approaches
 - General singleton
 ```
 var singleton = {
@@ -132,9 +139,12 @@ console.log( kettleUsedInMorning.getWaterInKettle === KettleUsedAtNoon.getWaterI
 * Add new classes and functionality without breaking open closed principle
 * Store which object to create outside of the program
 
+#### When to use
+
+#### Approaches
 - Factory Method
 ```
-var commercialMachineModel = function(options) {
+var commercialMachineClass = function(options) {
   this.machineType = options.machineType || "commercial";
   this.waterCapacity = options.waterCapacity || 4;
   this.temperatureAdjustment = options.temperatureAdjustment || "manual";
@@ -143,7 +153,7 @@ var commercialMachineModel = function(options) {
   this.pump = options.pump || 275;
 }
 
-var capsuleMachineModel = function(options) {
+var capsuleMachineClass = function(options) {
   this.machineType = options.machineType || "capsule";
   this.waterCapacity = options.waterCapacity || 1;
   this.frother = options.frother || "optional";
@@ -153,7 +163,7 @@ var capsuleMachineModel = function(options) {
   this.color = options.color || "white";
 }
 
-var automaticMachineModel = function(options) {
+var automaticMachineClass = function(options) {
   this.machineType = options.machineType || "automatic";
   this.waterCapacity = options.waterCapacity || 2;
   this.frother = options.frother || "built-in";
@@ -167,18 +177,18 @@ var coffeeMachineFactory = {};
 coffeeMachineFactory.prototype = {};
 
 // Define the prototypes and utilities
-coffeeMachineFactory.prototype.machineModel = capsuleMachineModel; 
+coffeeMachineFactory.prototype.machineClass = capsuleMachineClass; 
 
 coffeeMachineFactory.prototype.createMachine = function(options) {
   switch(options.machineType) {
     case "automatic":
-      this.machineModel = automaticMachineModel;
+      this.machineClass = automaticMachineClass;
       break;
     case "commercial":
-      this.machineModel = commercialMachineModel;
+      this.machineClass = commercialMachineClass;
       break;
     default:
-      this.machineModel = capsuleMachineModel;  
+      this.machineClass = capsuleMachineClass;  
   }
 }
 
@@ -188,6 +198,6 @@ var coffeeMachine = machineFactory.createMachine({
   machineType: "automatic"
 });
 
-console.log(coffeeMachine instanceof automaticMachineModel); // true  
+console.log(coffeeMachine instanceof automaticMachineClass); // true  
 console.log(coffeeMachine); 
 ```
