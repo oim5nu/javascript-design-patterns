@@ -1,0 +1,28 @@
+{
+  "name": "javascript-design-patterns",
+  "version": "1.0.0",
+  "description": "Examples of javascript design patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oim5nu/javascript-design-patterns.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oim5nu/javascript-design-patterns/issues"
+  },
+  "homepage": "https://github.com/oim5nu/javascript-design-patterns#readme",
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-watch": "^3.1.2",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4"
+  }
+}
