@@ -1,5 +1,5 @@
 var Interface = require("../../utils").Interface;
 
-var Bicycle = new Interface("Bicycle", ["assemble", "wash", "ride", "repair"]);
+var bicycleInterface = new Interface("Bicycle", ["assemble", "wash", "ride", "repair"]);
 
-exports.Bicycle = Bicycle;
+exports.bicycleInterface = bicycleInterface;

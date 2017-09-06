@@ -1,5 +1,3 @@
-var AbstractBicycleFactory = require("./abstractBicycleShopFactory").AbstractBicycleFactory;
-
 /* AbstractBicycleShop class */
 var AbstractBicycleShop = function() {};
 

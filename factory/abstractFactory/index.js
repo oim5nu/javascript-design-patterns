@@ -1,20 +1,9 @@
-/*
 
-          |
-          |
-          |
-  General |
-          |
-          |
-  ACME    |
-          |__________________________________________________________________
-              Speedster       Lowrider      Flatlander       ComfortCruiser
-*/
+var AcmeBicycleShop = require("./concreteBicycleShop").AcmeBicycleShop;
 
-var ConcreteBicycleFactory = require("./concreteBicycleFactory");
+var alecsCruisers = new AcmeBicycleShop();
+var myNewBike = alecsCruisers.sellBicycle("The Lowrider");
 
-var BicycleShop = function() {};
-BicycleShop.prototype.sellBicycle = function(model) {
-
-}
+myNewBike.ride();
+myNewBike.repair();
 

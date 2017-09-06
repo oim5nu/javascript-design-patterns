@@ -2,7 +2,7 @@ var Interface = require("../../utils").Interface;
 var Speedster = require("./bicycleModel").Speedster;
 var Lowrider = require("./bicycleModel").Lowrider;
 var ComfortCruiser = require("./bicycleModel").ComfortCruiser;
-var Bicycle = require("./bicycleInterface").Bicycle;
+var bicycleInterface = require("./bicycleInterface").bicycleInterface;
 
 /* BicycleShop class */
 var BicycleShop = function() {};
@@ -22,7 +22,7 @@ BicycleShop.prototype = {
       default:
         bicycle = new ComfortCruiser();
     }
-    Interface.ensureImplements(bicycle, Bicycle);
+    Interface.ensureImplements(bicycle, bicycleInterface);
 
     bicycle.assemble();
     bicycle.wash();

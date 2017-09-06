@@ -2,7 +2,7 @@ var Interface = require("../../utils").Interface;
 var Speedster = require("./bicycleModel").Speedster;
 var Lowrider = require("./bicycleModel").Lowrider;
 var ComfortCruiser = require("./bicycleModel").ComfortCruiser;
-var Bicycle = require("./bicycleInterface").Bicycle;
+var bicycleInterface = require("./bicycleInterface").bicycleInterface;
 
 /* BicycleFactory namespace. */
 var BicycleFactory = {
@@ -21,7 +21,7 @@ var BicycleFactory = {
         bicycle = new ComfortCruiser();
     }
 
-    Interface.ensureImplements(bicycle, Bicycle);
+    Interface.ensureImplements(bicycle, bicycleInterface);
     return bicycle;
   }
 };
