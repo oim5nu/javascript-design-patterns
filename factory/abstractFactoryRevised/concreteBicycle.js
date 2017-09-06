@@ -6,7 +6,7 @@ var AcmeSpeedster = (function() {
   function AcmeSpeedster() {
     this.model = "AcmeSpeedster";
   };
-  utils.extend(AcmeSpeedster, AbstractBicycle);
+  utils.derive(AcmeSpeedster, AbstractBicycle);
   AcmeSpeedster.prototype.assemble = function() {
     console.log("AcmeSpeedster is being assembled.");
   }
@@ -30,7 +30,7 @@ var AcmeLowrider = (function() {
   function AcmeLowrider() {
     this.model = "AcmeLowrider";
   };
-  utils.extend(AcmeLowrider, AbstractBicycle);
+  utils.derive(AcmeLowrider, AbstractBicycle);
   AcmeLowrider.prototype.assemble = function() {
     console.log("AcmeLowrider is being assembled.");
   };
@@ -55,7 +55,7 @@ var AcmeFlatlander = (function() {
   function AcmeFlatlander() {
     this.model = "AcmeFlatlander";
   };
-  utils.extend(AcmeFlatlander, AbstractBicycle);
+  utils.derive(AcmeFlatlander, AbstractBicycle);
   AcmeFlatlander.prototype.assemble = function() {
     console.log("AcmeFlatlander is being assembled.");
   };
@@ -79,7 +79,7 @@ var AcmeComfortCruiser = (function() {
   function AcmeComfortCruiser() {
     this.model = "AcmeComfortCruiser";
   };
-  utils.extend(AcmeComfortCruiser, AbstractBicycle);
+  utils.derive(AcmeComfortCruiser, AbstractBicycle);
   AcmeComfortCruiser.prototype.assemble = function() {
     console.log("AcmeComfortCruiser is being assembled.");
   };
@@ -103,7 +103,7 @@ var GeneralSpeedster = (function() {
   function GeneralSpeedster() {
     this.model = "GeneralSpeedster";
   };
-  utils.extend(GeneralSpeedster, AbstractBicycle);
+  utils.derive(GeneralSpeedster, AbstractBicycle);
   GeneralSpeedster.prototype.assemble = function() {
     console.log("GeneralSpeedster is being assembled.");
   }
@@ -127,7 +127,7 @@ var GeneralLowrider = (function() {
   function GeneralLowrider() {
     this.model = "GeneralLowrider";
   };
-  utils.extend(GeneralLowrider, AbstractBicycle);
+  utils.derive(GeneralLowrider, AbstractBicycle);
   GeneralLowrider.prototype.assemble = function() {
     console.log("GeneralLowrider is being assembled.");
   };
@@ -152,7 +152,7 @@ var GeneralFlatlander = (function() {
   function GeneralFlatlander() {
     this.model = "GeneralFlatlander";
   };
-  utils.extend(GeneralFlatlander, AbstractBicycle);
+  utils.derive(GeneralFlatlander, AbstractBicycle);
   GeneralFlatlander.prototype.assemble = function() {
     console.log("GeneralFlatlander is being assembled.");
   };
@@ -176,7 +176,7 @@ var GeneralComfortCruiser = (function() {
   function GeneralComfortCruiser() {
     this.model = "GeneralComfortCruiser";
   };
-  utils.extend(GeneralComfortCruiser, AbstractBicycle);
+  utils.derive(GeneralComfortCruiser, AbstractBicycle);
   GeneralComfortCruiser.prototype.assemble = function() {
     console.log("GeneralComfortCruiser is being assembled.");
   };

@@ -6,7 +6,7 @@ var Speedster = (function() {
   function Speedster() {
     this.model = "Speedster";
   };
-  utils.extend(Speedster, AbstractBicycle);
+  utils.derive(Speedster, AbstractBicycle);
   Speedster.prototype.assemble = function() {
     console.log("Speedster is being assembled.");
   }
@@ -30,7 +30,7 @@ var Lowrider = (function() {
   function Lowrider() {
     this.model = "Lowrider";
   };
-  utils.extend(Lowrider, AbstractBicycle);
+  utils.derive(Lowrider, AbstractBicycle);
   Lowrider.prototype.assemble = function() {
     console.log("Lowrider is being assembled.");
   };
@@ -55,7 +55,7 @@ var Flatlander = (function() {
   function Flatlander() {
     this.model = "Flatlander";
   };
-  utils.extend(Flatlander, AbstractBicycle);
+  utils.derive(Flatlander, AbstractBicycle);
   Flatlander.prototype.assemble = function() {
     console.log("Flatlander is being assembled.");
   };
@@ -79,7 +79,7 @@ var ComfortCruiser = (function() {
   function ComfortCruiser() {
     this.model = "ComfortCruiser";
   };
-  utils.extend(ComfortCruiser, AbstractBicycle);
+  utils.derive(ComfortCruiser, AbstractBicycle);
   ComfortCruiser.prototype.assemble = function() {
     console.log("ComfortCruiser is being assembled.");
   };

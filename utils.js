@@ -46,14 +46,26 @@ Interface.ensureImplements = function(obj, interfaces) {
   return true;
 };
 
-var extend = function(subClass, superClass) {
-  //var F = function() {};
-  //F.prototype = superClass.prototype;
+var derive = function(subClass, superClass) {
+  /* Original Code deprecated */
+  // var F = function() {};
+  // F.prototype = superClass.prototype;
   // subClass.prototype = new F();
   // subClass.prototype.constructor = subClass;
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
 };
 
+var extend = function(prototype, mixin) {
+  var newObject = Object.create(prototype);
+  for (var prop in mixin) {
+    if (mixin.hasOwnProperty(prop)) {
+      newObject[prop] = mixin[prop]; // override or augment
+    }
+  }
+  return newObject;
+};
+
 exports.Interface = Interface;
+exports.derive = derive;
 exports.extend = extend;

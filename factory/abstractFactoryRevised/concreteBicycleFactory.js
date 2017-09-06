@@ -12,7 +12,7 @@ var GeneralSpeedster = require("./concreteBicycle").GeneralSpeedster;
 /* AcmeBicycleFactory Class */
 var AcmeBicycleFactory = (function() {
   function AcmeBicycleFactory() {};
-  utils.extend(AcmeBicycleFactory, AbstractBicycleFactory);
+  utils.derive(AcmeBicycleFactory, AbstractBicycleFactory);
 
   AcmeBicycleFactory.prototype.createSpeedster = function() {
     var acmeSpeedster = new AcmeSpeedster();
@@ -39,7 +39,7 @@ var AcmeBicycleFactory = (function() {
 /* GeneralBicycleFactory Class */
 var GeneralBicycleFactory = (function() {
   function GeneralBicycleFactory() {};
-  utils.extend(GeneralBicycleFactory, AbstractBicycleFactory);
+  utils.derive(GeneralBicycleFactory, AbstractBicycleFactory);
 
   GeneralBicycleFactory.prototype.createSpeedster = function() {
     var generalSpeedster = new GeneralSpeedster();

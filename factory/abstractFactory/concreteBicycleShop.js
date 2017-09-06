@@ -16,7 +16,7 @@ var AcmeBicycleShop = (function() {
   function AcmeBicycleShop() {
     this.name = "ACME Bicycle Shop";
   };
-  utils.extend(AcmeBicycleShop, AbstractBicycleShop);
+  utils.derive(AcmeBicycleShop, AbstractBicycleShop);
   AcmeBicycleShop.prototype.createBicycle = function(model) {
     var bicycle;
 
@@ -45,7 +45,7 @@ var GeneralBicycleShop = (function() {
   function GeneralBicycleShop() {
     this.name = "ACME Bicycle Shop";
   };
-  utils.extend(GeneralBicycleShop, AbstractBicycleShop);
+  utils.derive(GeneralBicycleShop, AbstractBicycleShop);
   GeneralBicycleShop.prototype.createBicycle = function(model) {
     var bicycle;
 
