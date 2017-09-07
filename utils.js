@@ -88,9 +88,16 @@ var augment = function(receivingClass, givingClass) {
       // }
     }
   }
-}
+};
+
+var clone = function(source, destination) {
+  for (var attr in source.prototype) {
+    destination.prototype[attr] = source.prototype.[attr];
+  }
+};
 
 exports.Interface = Interface;
 exports.derive = derive;
 exports.extend = extend;
 exports.augment = augment; // used for mixin
+exports.clone = clone;
