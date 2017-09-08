@@ -201,3 +201,5 @@ var coffeeMachine = machineFactory.createMachine({
 console.log(coffeeMachine instanceof automaticMachineClass); // true  
 console.log(coffeeMachine); 
 ```
+### II Structual Patterns
+### III Behavioural Patterns
