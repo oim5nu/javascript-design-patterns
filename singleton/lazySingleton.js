@@ -1,15 +1,20 @@
 
-var Singleton = (function(fn) {
-  var _instance = null;
-  Singleton.prototype.getName = function() {
-    console.log(this.name);
-  };
-  Singleton.getInstance = function(fn) {
-    return _instance || ( _instance = fn.apply(this. arguments));
+var getSingle = function(fn) {
+  var result;
+  return function() {
+    return result || ( result = fn.apply(this, arguments));
   }
-  return Singleton;
-}());
+};
 
-var a = Singleton.getInstance();
-var b = Singleton.getInstance();
-console.log( a === b );
+var createFoo = function() {
+  var Foo = function() {
+    this.name = Math.random().toString();
+  };
+  var foo = new Foo();
+  return foo;
+};
+
+var createSingleFoo = getSingle(createFoo);
+var myFoo1 = createSingleFoo();
+var myFoo2 = createSingleFoo();
+console.log( myFoo1 === myFoo2 );

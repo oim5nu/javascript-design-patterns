@@ -52,6 +52,11 @@ var derive = function(subClass, superClass) {
   // F.prototype = superClass.prototype;
   // subClass.prototype = new F();
   // subClass.prototype.constructor = subClass;
+  Object.create = Object.create || function (obj) { // browser does not support ES5
+      var F = function() {};
+      F.prototype = obj;
+      return new F();
+  };
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
 };
@@ -92,7 +97,7 @@ var augment = function(receivingClass, givingClass) {
 
 var clone = function(source, destination) {
   for (var attr in source.prototype) {
-    destination.prototype[attr] = source.prototype.[attr];
+    destination.prototype[attr] = source.prototype[attr];
   }
 };
 
